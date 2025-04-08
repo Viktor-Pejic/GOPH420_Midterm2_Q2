@@ -16,16 +16,31 @@ def main():
 
     y_model = Z @ coeff
 
-    V_0 = np.exp(coeff[0])
+
 
     plt.figure()
     plt.plot(p, y_model)
-    plt.scatter(p, y, color='red', s=20)
+    plt.scatter(p, y, color='red', s=15)
     plt.title('Linearized Data with Regression Line')
     plt.xlabel('Rho [g/cm^3]')
     plt.ylabel('Log V_0 [m/s]')
-    plt.savefig('../figures/Data_With_Regression.png')
+    plt.savefig('../figures/Linearized_Data_With_Regression.png')
 
+    V_0 = np.exp(coeff[0])
+    unlinCoeff = [V_0, coeff[1]]
+    y_model_raw = unlinCoeff[0] * np.exp(unlinCoeff[1] * p)
+    # Sort p and corresponding model values for a clean line plot
+    sorted_indices = np.argsort(p)
+    p_sorted = p[sorted_indices]
+    y_model_raw_sorted= y_model_raw[sorted_indices]
+
+    plt.figure()
+    plt.plot(p_sorted, y_model_raw_sorted)
+    plt.scatter(p, v_0, color='red', s=15)
+    plt.title('Raw Data with Regression Line')
+    plt.xlabel('Rho [g/cm^3]')
+    plt.ylabel('V_0 [m/s]')
+    plt.savefig('../figures/RawData_With_Regression.png')
 
     print(f'R^2 value: {R2:.4f}')
     print(f'a0 coefficient: {coeff[0]:.4f}')
