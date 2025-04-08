@@ -7,9 +7,9 @@ def main():
     p = data_raw[:,0]
     v_0 = data_raw[:,1]
 
-    plt.plot(rho,v_p)
+    plt.scatter(p,v_0, color='red', s=20)
     plt.xlabel("Rho [g/cm^3]")
-    plt.ylabel("Velocity [m/s]")
+    plt.ylabel("V_0 [m/s]")
     plt.title("Raw Plot of Data", fontweight="bold")
     plt.savefig('../figures/Raw_Data.png')
 
