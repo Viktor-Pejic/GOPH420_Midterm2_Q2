@@ -24,6 +24,7 @@ def main():
     plt.title('Linearized Data with Regression Line', fontweight='bold')
     plt.xlabel('Rho [g/cm^3]')
     plt.ylabel('Log V_0 [m/s]')
+    plt.text(1.5,8.5,f'R2: {R2:.4f}   V_0: {coeff[0]:.4f}   k: {coeff[1]:.4f}')
     plt.savefig('../figures/Linearized_Data_With_Regression.png')
 
     V_0 = np.exp(coeff[0])
@@ -40,6 +41,7 @@ def main():
     plt.title('Raw Data with Regression Line', fontweight='bold')
     plt.xlabel('Rho [g/cm^3]')
     plt.ylabel('V_0 [m/s]')
+    plt.text(1.5,5200,f'R2: {R2:.4f}   V_0: {unlinCoeff[0]:.4f}   k: {unlinCoeff[1]:.4f}')
     plt.savefig('../figures/RawData_With_Regression.png')
 
     print(f'R^2 value: {R2:.4f}')
