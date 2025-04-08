@@ -1,3 +1,19 @@
 a.) The shape of the data seems to be following an
 exponential trend. Since the data follows a linear trend it is
-possible to linearize it and transform it into a linear trending set of data
+possible to linearize it and transform it into a linear trending set of data.
+Without a visible data trend, we would assume that linear regression is not
+possible. After conducting a least squares regression, the computed R^2
+value must be analyzed to assess a goodness of fit of the data to the trend.
+If the R^2 value is close to 1, then we can confidently say that the model accurately
+depicts the data trend.
+
+b.) The linearization will need to be done by taking the natural log of both sides of the
+given equation and plotting the data in ln space. The linearized version of the function is
+ln(V_p) = ln(V_0) + k * p. Therefore our computed parameter V_0 = ln(a0) and k = a1 where
+a0 and a1 are the model parameters.
+
+d.) R^2 = 0.8996
+
+Our R^2 value depicts a very good fit as it is relatively close to 1. Yes our assumptions
+in a.) are shown in our regression line plot over the raw data as we can clearly see the
+trend of the data following the linear regression line.
